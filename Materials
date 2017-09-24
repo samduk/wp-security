@@ -1,0 +1,73 @@
+****************************************************
+How to enumerate username from a WordPress website?
+****************************************************
+
+Manually
+?author=1  or ?author=1000 (better write a script)
+
+Or run wpscan
+
+ruby wpscan.rb --url target_website.com --enumerate -u
+
+
+****************************
+Building authentic password?
+****************************
+Demo
+
+****************************
+Brute force attack
+****************************
+1. wpscan --url target.com --wordlist 'password.lst' --username admin
+2. hydra -l username -P password.lst lotsawa.org http-get-form
+3. Burpsuite
+    interception off
+    put name and password
+        check http history
+        latest thread
+        right click (send to intruder)
+        Positions
+        name to $name and $password
+        choose cluster bomb
+            goto payload section
+                copy incorect
+                goto options
+                clear
+                 paste incorrect
+                goto intruder and launch attack
+
+
+How to launch attack ?
+Demo
+
+How to protect?
+
+# Block User ID Phishing Requests
+<IfModule mod_rewrite.c>
+RewriteCond %{QUERY_STRING} ^author=([0-9]*)
+RewriteRule .* http://lotsawa.org/? [L,R=302]
+</IfModule>
+
+# Double authentication
+
+<FilesMatch "wp-login.php">
+AuthName "Authorized Only"
+AuthType Basic
+AuthUserFile /home/user-name/.wpadmin
+require valid-user
+</FilesMatch>
+
+
+
+
+
+***********************
+Attachment and URL
+***********************
+
+Offensive Demo ?
+
+Protection:
+
+virustotal.com (not a foolprood solution though)
+
