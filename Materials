@@ -42,22 +42,48 @@ Demo
 
 How to protect?
 
-# Block User ID Phishing Requests
+#1 Block User ID enumeration
 <IfModule mod_rewrite.c>
 RewriteCond %{QUERY_STRING} ^author=([0-9]*)
 RewriteRule .* http://lotsawa.org/? [L,R=302]
 </IfModule>
 
-# Double authentication
+#2 Block access to wp-admin.
+order deny,allow
+allow from x.x.x.x
+deny from all
 
-<FilesMatch "wp-login.php">
-AuthName "Authorized Only"
-AuthType Basic
-AuthUserFile /home/user-name/.wpadmin
-require valid-user
-</FilesMatch>
+#3 Disable directory browsing
+ Options All -Indexes
 
+#4 Caching Improvement
 
+#5 Database Optimization
+
+#6 Photoshop tweak
+   i. format
+   ii. Forensic
+
+#7 Backup and hashing
+-> https://wordpress.org/plugins/all-in-one-wp-migration/  (Upto 500MB)
+-> ePotala Offer 1000/- entire website (one language)
+-> two languages 1500/-
+-> three languages 2000/-
+
+#8 Block access to wp-admin.
+order deny,allow
+allow from 45.113.64.170
+ #allow from y.y.y.y
+ #allow from z.z.z.z
+deny from all
+
+#9 Stop Apache from serving .ht* files
+<Files ~ "^\.ht">
+Order allow,deny
+Deny from all
+</Files>
+
+#10 Enable Human verification for the contact form
 
 
 
@@ -69,5 +95,16 @@ Offensive Demo ?
 
 Protection:
 
-virustotal.com (not a foolprood solution though)
+virustotal.com (not a foolproof solution though)
+
+**********************
+Sending Encrypted Email
+**********************
+Demo
+
+**********************
+Introducing Chat App
+**********************
+Signal
+
 
