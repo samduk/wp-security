@@ -1,4 +1,9 @@
-****************************************************
+Security Practices:
+*******************
+Date: 26 Sep 2017
+
+/*********************/Website Section/*********************/
+
 How to enumerate username from a WordPress website?
 ****************************************************
 
@@ -85,13 +90,17 @@ Deny from all
 
 #10 Enable Human verification for the contact form
 
+#11 Set limit to login
 
+#12 Importance of HTTPS
+Demo
 
+/*********************/Others/*********************/
 ***********************
 Attachment and URL
 ***********************
 
-Offensive Demo ?
+Offensive Demo (if time permits)
 
 Protection:
 
@@ -108,3 +117,4 @@ Introducing Chat App
 Signal
 
 
+/*********************/Next Mission: Cyber Forenics/*********************/
