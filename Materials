@@ -94,6 +94,14 @@ Deny from all
 #12 Importance of HTTPS
 Demo
 
+#13 forcing https
+
+RewriteEngine On
+RewriteCond %{HTTPS} !=on
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+
+
 /*********************/Others/*********************/
 ***********************
 1. Attachment and URL
