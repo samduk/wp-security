@@ -19,7 +19,6 @@ ruby wpscan.rb --url target_website.com --enumerate -u
 Building authentic password?
 ****************************
 Demo
-
 ****************************
 Brute force attack
 ****************************
